@@ -42,6 +42,7 @@ Or run the script
 ### Running
 
 Simply run the container by using
+
 	docker run -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix --rm -it nemaktis-docker xterm
 
 Alternatively, use the automated script
