@@ -39,7 +39,7 @@ Or run the script
 
 	./build.sh
 
-### Running
+### Starting the container
 
 Simply run the container by using
 
@@ -56,6 +56,18 @@ Alternatively, use the automated script
 Or, defining a directory,
 
 	./run.sh /path/to/programs/directory
+
+### Notes and Usage
+
+This particular image comes with xterm, tmux, and vi in case you want to edit
+your programs in the container itself instead of editing them from the host.  If
+you think it is unnecessary bloat, feel free to edit the Dockerfile yourself and
+remove the lines where those programs are installed.
+
+After everything is up and running, simply run your programs from the container
+by executing
+
+	python /path/to/your/program
 
 ### License
 
