@@ -2,8 +2,7 @@ FROM ubuntu
 RUN apt update && apt -y upgrade && \
 apt install ffmpeg libsm6 libxext6 -y && \
 apt install -y wget && \
-apt install -y xterm && \
-apt install -y vi tmux && \
+apt install -y xterm vi tmux && \
 useradd --create-home --shell /bin/bash nm-user
 USER nm-user
 WORKDIR nm-user
@@ -15,3 +14,6 @@ conda install -c conda-forge -y mamba && \
 mamba create -n nm -c conda-forge -c warthan07 -y nemaktis=1.4.4 && \
 echo "export PATH=$PATH:$HOME/miniconda/bin/" >> $HOME/.bashrc && \
 echo "conda activate nm" >> $HOME/.bashrc
+
+ENV HOME /home/nm-user
+CMD /bin/bash

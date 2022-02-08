@@ -9,10 +9,10 @@ then
 		--env DISPLAY=${DISPLAY} \
 		--volume /tmp/.X11-unix:/tmp/.X11-unix\
 		--volume $nmuserhome:/home/nm-user/programs \
-		nemaktis-docker xterm
+		nemaktis-docker
 else
 	sudo docker run --rm -it \
 		--env DISPLAY=${DISPLAY} \
 		--volume /tmp/.X11-unix:/tmp/.X11-unix \
-		nemaktis-docker xterm
+		nemaktis-docker
 fi

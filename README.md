@@ -43,11 +43,11 @@ Or run the script
 
 Simply run the container by using
 
-	docker run -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix --rm -it nemaktis-docker xterm
+	docker run -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix --rm -it nemaktis-docker
 
 Or, if you want to mount a directory with your Nemaktis Python programs, use
 
-	docker run -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix /path/to/dir:/home/nm-user/programs --rm -it nemaktis-docker xterm
+	docker run -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix /path/to/dir:/home/nm-user/programs --rm -it nemaktis-docker
 
 Alternatively, use the automated script
 
@@ -57,17 +57,24 @@ Or, defining a directory,
 
 	./run.sh /path/to/programs/directory
 
-### Notes and Usage
-
-This particular image comes with xterm, tmux, and vi in case you want to edit
-your programs in the container itself instead of editing them from the host.  If
-you think it is unnecessary bloat, feel free to edit the Dockerfile yourself and
-remove the lines where those programs are installed.
+### Usage
 
 After everything is up and running, simply run your programs from the container
 by executing
 
 	python /path/to/your/program
+
+### Notes
+
+I decided to use the base Ubuntu image for this project because it is easy to
+install the anaconda environment within it.  I understand the standard is to
+employ the slimmer Alpine docker image, but it uses musl instead of glibc, which
+makes things difficult, so I have opted for simplicity here.
+
+Further, this particular image comes with xterm, tmux, and vi in case you want
+to edit your programs in the container itself instead of editing them from the
+host.  If you think it is unnecessary bloat, feel free to edit the Dockerfile
+yourself and remove the lines where those programs are installed.
 
 ### License
 
