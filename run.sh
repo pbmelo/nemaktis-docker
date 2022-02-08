@@ -2,7 +2,7 @@
 
 # I suggest using something like
 #nmuserhome=$HOME"/Documents/docker/nemaktis/programs/"
-if [ -z $1 ]
+if [ ! -z $1 ]
 then
 	nmuserhome=$1
 	sudo docker run --rm -it \
