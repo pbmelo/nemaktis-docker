@@ -3,7 +3,7 @@
 A way to run the [Nemaktis](https://nemaktis.readthedocs.io/en/latest/) toolkit on Docker.
 
 According to the author,
-> "Nemaktis is an open-source platform including tools for propagating and visualising optical field in complex birefringent media such as liquid crystal (LC) layers"
+> "Nemaktis is an open-source platform including tools for propagating and visualizing optical field in complex birefringent media such as liquid crystal (LC) layers"
 
 ## Dependencies
 
@@ -45,9 +45,17 @@ Simply run the container by using
 
 	docker run -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix --rm -it nemaktis-docker xterm
 
+Or, if you want to mount a directory with your Nemaktis Python programs, use
+
+	docker run -e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix /path/to/dir:/home/nm-user/programs --rm -it nemaktis-docker xterm
+
 Alternatively, use the automated script
 
 	./run.sh
+
+Or, defining a directory,
+
+	./run.sh /path/to/programs/directory
 
 ### License
 
@@ -55,7 +63,7 @@ Nemaktis uses the MIT license and asks users to cite their original papers on
 your own published research.  Please see the [original GitHub
 repository](https://github.com/warthan07/Nemaktis) for further information.
 
-This particular repository (to build the docker system) uses the GPL3 license.
+This particular repository uses the GPL3 license.
 
 Copyright (C) 2022 pbmelo
 

@@ -1,10 +1,9 @@
-#FROM alpine:3.14
-#RUN apk add --no-cache mysql-client
 FROM ubuntu
 RUN apt update && apt -y upgrade && \
 apt install ffmpeg libsm6 libxext6 -y && \
 apt install -y wget && \
 apt install -y xterm && \
+apt install -y vi tmux && \
 useradd --create-home --shell /bin/bash nm-user
 USER nm-user
 WORKDIR nm-user
