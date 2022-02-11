@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sudo docker build . --tag nemaktis-docker
+docker build . --tag nemaktis-docker

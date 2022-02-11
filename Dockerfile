@@ -2,7 +2,7 @@ FROM ubuntu
 RUN apt update && apt -y upgrade && \
 apt install ffmpeg libsm6 libxext6 -y && \
 apt install -y wget && \
-apt install -y xterm vi tmux && \
+apt install -y xterm vim tmux && \
 useradd --create-home --shell /bin/bash nm-user
 USER nm-user
 WORKDIR nm-user

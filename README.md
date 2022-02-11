@@ -19,6 +19,9 @@ TL;DR:
 
 	git clone https://github.com/pbmelo/nemaktis-docker && cd nemaktis-docker && ./build.sh && ./run.sh
 
+Note that if you're not a member of the docker group, building and running the
+container will require root privileges.
+
 For more detailed instructions, see the following section.
 
 ### Installation
@@ -39,6 +42,8 @@ Or run the script
 
 	./build.sh
 
+If the command fails, run it with root privileges.
+
 ### Starting the container
 
 Simply run the container by using
@@ -53,9 +58,15 @@ Alternatively, use the automated script
 
 	./run.sh
 
-Or, defining a directory,
+Similarly, if the command fails, run it with root privileges.
+
+Or, you can run it defining a directory as an argument,
 
 	./run.sh /path/to/programs/directory
+
+Such as
+
+	./run.sh ~/docker-dir/nemaktis-docker
 
 ### Usage
 
@@ -71,7 +82,7 @@ install the anaconda environment within it.  I understand the standard is to
 employ the slimmer Alpine docker image, but it uses musl instead of glibc, which
 makes things difficult, so I have opted for simplicity here.
 
-Further, this particular image comes with xterm, tmux, and vi in case you want
+Further, this particular image comes with xterm, tmux, and vim in case you want
 to edit your programs in the container itself instead of editing them from the
 host.  If you think it is unnecessary bloat, feel free to edit the Dockerfile
 yourself and remove the lines where those programs are installed.
