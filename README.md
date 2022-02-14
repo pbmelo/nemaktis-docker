@@ -80,7 +80,12 @@ by executing
 I decided to use the base Ubuntu image for this project because it is easy to
 install the anaconda environment within it.  I understand the standard is to
 employ the slimmer Alpine docker image, but it uses musl instead of glibc, which
-makes things difficult, so I have opted for simplicity here.
+makes things difficult, so I have opted for simplicity here.  The other familiar
+and commonplace alternatives would be Debian stable slim, which is a couple
+megabytes heavier than Ubuntu, and Fedora, which is almost twice as heavy.
+Considering that anaconda, nemaktis, and its the dependencies together are well
+over 3.5 GB in size, picking an image that is a couple megabytes slimmer won't
+matter much.  Currently, this nemaktis-docker image is 3.85 GB.
 
 Further, this particular image comes with xterm, tmux, and vim in case you want
 to edit your programs in the container itself instead of editing them from the
